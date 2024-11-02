@@ -6,6 +6,8 @@ package Vistas;
 
 import Modelos.Tablero.Tablero;
 import java.awt.Graphics;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -20,15 +22,42 @@ import javax.swing.JOptionPane;
  *
  * @author User
  */
-public class VistaMenu extends javax.swing.JFrame {
+public class FrmMenu extends javax.swing.JFrame {
 
     private Clip clip;
     /**
      * Creates new form VistaMenu
      */
-    public VistaMenu() {
+    public FrmMenu() {
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLocationRelativeTo(this);
+        addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                ajustarPosiciones();
+            }
+        });
+    }
+    
+    private void ajustarPosiciones() {
+        int frameWidth = getWidth();
+        int frameHeight = getHeight();
+        
+        // Calcula la posición para el botón 1 (btnIniciar1)
+        int x1 = (int) (frameWidth * 0.35); // Ajusta el porcentaje según la posición del punto rojo
+        int y1 = (int) (frameHeight * 0.73); // Ajusta el porcentaje según la posición del punto rojo
+        
+        // Calcula la posición para el botón 2 (btnIniciar)
+        int x2 = (int) (frameWidth * 0.55); // Ajusta el porcentaje según la posición del punto rojo
+        int y2 = (int) (frameHeight * 0.73); // Ajusta el porcentaje según la posición del punto rojo
+        
+        int xInfo = (int) (frameWidth * 0.88); // Ajusta el porcentaje según la posición deseada
+        int yInfo = (int) (frameHeight * 0.07); // Ajusta el porcentaje según la posición deseada
+        
+        btnInformacion.setLocation(xInfo, yInfo);
+        btnInciar1.setLocation(x1, y1);
+        btnInciar.setLocation(x2, y2);
     }
 
     /**
@@ -61,7 +90,7 @@ public class VistaMenu extends javax.swing.JFrame {
             System.out.println("Abortar Juego");
             tablero.abortarJuego();
             
-            VistaMenu menu = new VistaMenu();
+            FrmMenu menu = new FrmMenu();
             menu.setVisible(true);            
         });
         archivoMenu.add(ReItem);
@@ -111,15 +140,14 @@ public class VistaMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         ImageIcon icon = new ImageIcon(getClass().getResource("/Iconos/MenuOthello.png"));
-        jDesktopPane1 = new javax.swing.JDesktopPane(){
+        Desk = new javax.swing.JDesktopPane(){
             public void paintComponent(Graphics g){
                 g.drawImage(icon.getImage(),0,0,getWidth(),getHeight(),this);
             }
-
         };
         btnInciar = new javax.swing.JButton();
         btnInciar1 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnInformacion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -128,12 +156,12 @@ public class VistaMenu extends javax.swing.JFrame {
             }
         });
 
-        btnInciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV32.png"))); // NOI18N
+        btnInciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV64.png"))); // NOI18N
         btnInciar.setText("1vrs1");
         btnInciar.setContentAreaFilled(false);
         btnInciar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnInciar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV32.png"))); // NOI18N
-        btnInciar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV64.png"))); // NOI18N
+        btnInciar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV64.png"))); // NOI18N
+        btnInciar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV128.png"))); // NOI18N
         btnInciar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnInciar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnInciar.addActionListener(new java.awt.event.ActionListener() {
@@ -142,12 +170,12 @@ public class VistaMenu extends javax.swing.JFrame {
             }
         });
 
-        btnInciar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV32.png"))); // NOI18N
+        btnInciar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV64.png"))); // NOI18N
         btnInciar1.setText("1vrsBoot");
         btnInciar1.setContentAreaFilled(false);
         btnInciar1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnInciar1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV32.png"))); // NOI18N
-        btnInciar1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV64.png"))); // NOI18N
+        btnInciar1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV64.png"))); // NOI18N
+        btnInciar1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV128.png"))); // NOI18N
         btnInciar1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         btnInciar1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnInciar1.addActionListener(new java.awt.event.ActionListener() {
@@ -156,44 +184,53 @@ public class VistaMenu extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/infoVerde32.png"))); // NOI18N
-        jButton1.setText("Información");
-        jButton1.setContentAreaFilled(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/infoVerde32.png"))); // NOI18N
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/infoVerde64.png"))); // NOI18N
-        jButton1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnInformacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/infoVerde32.png"))); // NOI18N
+        btnInformacion.setText("Información");
+        btnInformacion.setContentAreaFilled(false);
+        btnInformacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnInformacion.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/infoVerde32.png"))); // NOI18N
+        btnInformacion.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/infoVerde64.png"))); // NOI18N
+        btnInformacion.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnInformacion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnInformacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInformacionActionPerformed(evt);
+            }
+        });
 
-        jDesktopPane1.setLayer(btnInciar, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(btnInciar1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Desk.setLayer(btnInciar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Desk.setLayer(btnInciar1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Desk.setLayer(btnInformacion, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap(204, Short.MAX_VALUE)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(btnInciar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout DeskLayout = new javax.swing.GroupLayout(Desk);
+        Desk.setLayout(DeskLayout);
+        DeskLayout.setHorizontalGroup(
+            DeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DeskLayout.createSequentialGroup()
+                .addContainerGap(181, Short.MAX_VALUE)
+                .addGroup(DeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DeskLayout.createSequentialGroup()
+                        .addComponent(btnInciar, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
-                        .addComponent(btnInciar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(200, 200, 200))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnInciar1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(177, 177, 177))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DeskLayout.createSequentialGroup()
+                        .addComponent(btnInformacion)
                         .addContainerGap())))
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+        DeskLayout.setVerticalGroup(
+            DeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DeskLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnInciar, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                    .addComponent(btnInciar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(DeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(DeskLayout.createSequentialGroup()
+                        .addComponent(btnInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(DeskLayout.createSequentialGroup()
+                        .addGap(0, 173, Short.MAX_VALUE)
+                        .addGroup(DeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnInciar1, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                            .addComponent(btnInciar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(36, 36, 36))
         );
 
@@ -201,11 +238,11 @@ public class VistaMenu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(Desk)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(Desk)
         );
 
         pack();
@@ -225,6 +262,14 @@ public class VistaMenu extends javax.swing.JFrame {
         MusicaInicio(true);
     }//GEN-LAST:event_formWindowActivated
 
+    private void btnInformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInformacionActionPerformed
+        // TODO add your handling code here:
+        FrmInformacion frm = new FrmInformacion();
+        this.Desk.add(frm);
+        frm.setLocation((this.Desk.getWidth()-frm.getWidth())/2, (this.Desk.getHeight()-frm.getHeight())/2);
+        frm.setVisible(true);
+    }//GEN-LAST:event_btnInformacionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -242,28 +287,29 @@ public class VistaMenu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaMenu().setVisible(true);
+                new FrmMenu().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane Desk;
     private javax.swing.JButton btnInciar;
     private javax.swing.JButton btnInciar1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JButton btnInformacion;
     // End of variables declaration//GEN-END:variables
 }
