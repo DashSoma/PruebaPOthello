@@ -296,6 +296,11 @@ public class VistaJuego extends javax.swing.JDialog {
         jButton1.setText("Iniciar");
 
         jButton2.setText("Opciones");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -339,6 +344,14 @@ public class VistaJuego extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+     FrmOpciones frm = new FrmOpciones(null, true); 
+     frm.setLocationRelativeTo(null);
+     frm.setVisible(true);
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      *
