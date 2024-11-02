@@ -84,7 +84,7 @@ public class VistaMenu extends javax.swing.JFrame {
                     clip.close();
                     clip = null;
                 } else {
-                    AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource("/musica/AudioInicio.wav"));
+                    AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource("/Vistas/AudioInicio.wav"));
                     clip = AudioSystem.getClip();
                     clip.open(audioInputStream);
                     clip.start();
