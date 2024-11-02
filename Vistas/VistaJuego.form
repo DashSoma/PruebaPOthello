@@ -38,13 +38,28 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="75" max="32767" attributes="0"/>
-              <Component id="lblJugador1" min="-2" pref="95" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="lblNombreJ1" min="-2" pref="99" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Component id="lblJugador2" min="-2" pref="97" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="lblNombreJ2" min="-2" pref="120" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="lblJugador1" min="-2" pref="95" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblNombreJ1" min="-2" pref="99" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblJugador2" min="-2" pref="97" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                      <Component id="Contador1" min="-2" pref="136" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                      <Component id="Contador2" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="lblNombreJ2" min="-2" pref="120" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -59,7 +74,16 @@
                   <Component id="lblJugador1" max="32767" attributes="0"/>
                   <Component id="lblJugador2" max="32767" attributes="0"/>
               </Group>
+<<<<<<< Updated upstream
               <EmptySpace pref="467" max="32767" attributes="0"/>
+=======
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="Contador2" pref="35" max="32767" attributes="0"/>
+                  <Component id="Contador1" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="458" max="32767" attributes="0"/>
+>>>>>>> Stashed changes
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -176,6 +200,10 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Contador1">
+    </Component>
+    <Component class="javax.swing.JLabel" name="Contador2">
     </Component>
   </SubComponents>
 </Form>
