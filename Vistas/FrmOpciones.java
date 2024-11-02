@@ -36,37 +36,37 @@ public class FrmOpciones extends javax.swing.JDialog {
                 g.drawImage(icon.getImage(),0,0,getWidth(),getHeight(),this);
             }
         };
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        BtnSalir = new javax.swing.JButton();
+        BtnReiniciar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/salir32.png"))); // NOI18N
-        jButton1.setText("Salir");
-        jButton1.setContentAreaFilled(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/salir32.png"))); // NOI18N
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/salir64.png"))); // NOI18N
-        jButton1.setVerifyInputWhenFocusTarget(false);
-        jButton1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/salir32.png"))); // NOI18N
+        BtnSalir.setText("Salir");
+        BtnSalir.setContentAreaFilled(false);
+        BtnSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnSalir.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/salir32.png"))); // NOI18N
+        BtnSalir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/salir64.png"))); // NOI18N
+        BtnSalir.setVerifyInputWhenFocusTarget(false);
+        BtnSalir.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        BtnSalir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/reiniciar32.png"))); // NOI18N
-        jButton2.setText("Reiniciar");
-        jButton2.setContentAreaFilled(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/reiniciar32.png"))); // NOI18N
-        jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/reiniciar64.png"))); // NOI18N
-        jButton2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BtnReiniciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/reiniciar32.png"))); // NOI18N
+        BtnReiniciar.setText("Reiniciar");
+        BtnReiniciar.setContentAreaFilled(false);
+        BtnReiniciar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BtnReiniciar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/reiniciar32.png"))); // NOI18N
+        BtnReiniciar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/reiniciar64.png"))); // NOI18N
+        BtnReiniciar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        BtnReiniciar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BtnReiniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BtnReiniciarActionPerformed(evt);
             }
         });
 
-        jDesktopPane1.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(BtnSalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(BtnReiniciar, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -74,19 +74,19 @@ public class FrmOpciones extends javax.swing.JDialog {
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGap(118, 118, 118)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnReiniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(121, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGap(87, 87, 87)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BtnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                    .addComponent(BtnReiniciar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -103,9 +103,9 @@ public class FrmOpciones extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void BtnReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReiniciarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_BtnReiniciarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,8 +151,8 @@ public class FrmOpciones extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton BtnReiniciar;
+    private javax.swing.JButton BtnSalir;
     private javax.swing.JDesktopPane jDesktopPane1;
     // End of variables declaration//GEN-END:variables
 }
