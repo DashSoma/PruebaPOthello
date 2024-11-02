@@ -3,10 +3,8 @@ package Modelos.Juego;
 
 
 /**
- * Representa una ficha en el juego, que puede ser de un color específico. Cada
- * ficha tiene un color asociado, que se define mediante un valor entero.
- *
- * @author Christian Paniagua Castro Y Reyman Barquero Ramírez
+ * 
+ * @author User
  */
 public class Ficha {
 

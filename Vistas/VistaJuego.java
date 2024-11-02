@@ -12,22 +12,12 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 /**
- * Ventana principal del juego que proporciona la interfaz gráfica para
- * interactuar con el usuario.
  *
- * Esta clase extiende de JFrame y gestiona la configuración del juego,
- * incluidos los jugadores, el tablero y las opciones del menú.
- *
- *
- * @author Christian Paniagua Castro y Reyman Barquero Ramírez
+ * @author Chrisp
  *
  */
 public class VistaJuego extends javax.swing.JDialog {
 
-    /**
-     * El tablero del juego. El turno actual del juego. El primer jugador. El
-     * segundo jugador. Indica si el juego está en progreso.
-     */
     private Tablero tablero;
     Jugador jugador1;
     Jugador jugador2;
@@ -64,12 +54,7 @@ public class VistaJuego extends javax.swing.JDialog {
         JMenuItem itemAcercaDe = new JMenuItem("Acerca de...");
         JMenuItem itemReiniciar = new JMenuItem("Reiniciar");
 
-        /**
-         * Escuchador del JMenuItem Iniciar. Se ejecuta el JMenuItem de Iniciar
-         * por medio del evento actionPerFormed que activa el método
-         * iniciarJuego()
-         *
-         */
+        
         itemIniciar.addActionListener((ActionEvent e) -> {
             tablero.iniciarJuego();
         });

@@ -17,12 +17,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * Clase que representa el tablero del juego de Othello. Esta clase extiende
- * JPanel y maneja la lógica del juego, incluyendo la detección de movimientos
- * válidos, la actualización del tablero y la visualización gráfica de los
- * movimientos.
- *
- * @author Christian Paniagua Castro Y Reyman Barquero Ramírez
+ * @author User
  */
 public class Tablero extends JPanel {
 
@@ -115,7 +110,6 @@ public class Tablero extends JPanel {
         int fichasJugador1 = 0;
         int fichasJugador2 = 0;
 
-        // Contar las fichas de cada jugador
         for (int i = 0; i < tamaño; i++) {
             for (int j = 0; j < tamaño; j++) {
                 if (tablero[i][j] == ficha.getNegro()) {
@@ -126,7 +120,6 @@ public class Tablero extends JPanel {
             }
         }
 
-        // Determinar el ganador y mostrar el mensaje
         String mensaje;
         if (fichasJugador1 > fichasJugador2) {
             mensaje = "Ganó " + jugador1 + " con " + fichasJugador1 + " fichas.";
@@ -145,13 +138,6 @@ public class Tablero extends JPanel {
         reestablecerVariables();
     }
 
-    /**
-     * Verifica si un movimiento en una celda específica es válido.
-     *
-     * @param filaSeleccionada la fila seleccionada
-     * @param columnaSeleccionada la columna seleccionada
-     * @return true si el movimiento es válido, false en caso contrario.
-     */
     public boolean esMovimientoValido(int filaSeleccionada, int columnaSeleccionada) {
         if (tablero[filaSeleccionada][columnaSeleccionada] != vacio) {
             return false;
@@ -314,8 +300,6 @@ public class Tablero extends JPanel {
             return;
         }
 
-//        jugador1 = JOptionPane.showInputDialog(view, "Ingresa el nombre del Jugador 1");
-//        jugador2 = JOptionPane.showInputDialog(view, "Ingresa el nombre del Jugador 2");
         view.getLblJugador1().setText("Jugador 1:");
         view.getLblJugador2().setText("Jugador 2:");
 

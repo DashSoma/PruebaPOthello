@@ -3,14 +3,9 @@ package Vistas;
 
 /**
  *
- * @author Christian Paniagua y Reyman Barquero 
+ * @author User
  */
 public class VistaAcercaDe extends javax.swing.JDialog {
-    
-    /**
-     * @param modal modal 
-     * @param parent padre de él 
-     */
      
     public VistaAcercaDe(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -29,6 +24,8 @@ public class VistaAcercaDe extends javax.swing.JDialog {
         lblEstudiante2 = new javax.swing.JLabel();
         lblIconUtn = new javax.swing.JLabel();
         lblEsrudiantes = new javax.swing.JLabel();
+        lblEstudiante3 = new javax.swing.JLabel();
+        lblEstudiante4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("¡Conoce a los programadores que desarrollaron este juego!");
@@ -36,15 +33,21 @@ public class VistaAcercaDe extends javax.swing.JDialog {
         pnlInfo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         lblEstudiante1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        lblEstudiante1.setText("Reyman Barquero Ramírez");
+        lblEstudiante1.setText("Daniel Delgado Alvarado");
 
         lblEstudiante2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        lblEstudiante2.setText("Christian Paniagua Castro ");
+        lblEstudiante2.setText("Christian Paniagua Castro");
 
         lblIconUtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/utnIcon.png"))); // NOI18N
 
         lblEsrudiantes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblEsrudiantes.setText("Realizado por los estudiantes de ITI");
+        lblEsrudiantes.setText("Realizado por los estudiantes de ITI:");
+
+        lblEstudiante3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblEstudiante3.setText("Dashly Obando Somarribas");
+
+        lblEstudiante4.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblEstudiante4.setText("Felipe Muñoz Rojas");
 
         javax.swing.GroupLayout pnlInfoLayout = new javax.swing.GroupLayout(pnlInfo);
         pnlInfo.setLayout(pnlInfoLayout);
@@ -54,27 +57,37 @@ public class VistaAcercaDe extends javax.swing.JDialog {
                 .addGap(30, 30, 30)
                 .addGroup(pnlInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlInfoLayout.createSequentialGroup()
-                        .addGroup(pnlInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(lblEstudiante3)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlInfoLayout.createSequentialGroup()
+                        .addComponent(lblEstudiante4)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(pnlInfoLayout.createSequentialGroup()
+                        .addGroup(pnlInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblEstudiante2)
                             .addComponent(lblEstudiante1)
-                            .addComponent(lblEstudiante2))
-                        .addGap(42, 42, 42)
-                        .addComponent(lblIconUtn))
-                    .addComponent(lblEsrudiantes))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(lblEsrudiantes))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addComponent(lblIconUtn)
+                        .addGap(24, 24, 24))))
         );
         pnlInfoLayout.setVerticalGroup(
             pnlInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInfoLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(lblEsrudiantes)
-                .addGap(27, 27, 27)
-                .addGroup(pnlInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(pnlInfoLayout.createSequentialGroup()
-                        .addComponent(lblEstudiante1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblEstudiante2))
+                .addGroup(pnlInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInfoLayout.createSequentialGroup()
+                        .addComponent(lblEsrudiantes)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblEstudiante1))
                     .addComponent(lblIconUtn, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(lblEstudiante2)
+                .addGap(18, 18, 18)
+                .addComponent(lblEstudiante3)
+                .addGap(18, 18, 18)
+                .addComponent(lblEstudiante4)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -84,14 +97,14 @@ public class VistaAcercaDe extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(pnlInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(pnlInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -107,6 +120,8 @@ public class VistaAcercaDe extends javax.swing.JDialog {
     private javax.swing.JLabel lblEsrudiantes;
     private javax.swing.JLabel lblEstudiante1;
     private javax.swing.JLabel lblEstudiante2;
+    private javax.swing.JLabel lblEstudiante3;
+    private javax.swing.JLabel lblEstudiante4;
     private javax.swing.JLabel lblIconUtn;
     private javax.swing.JPanel pnlInfo;
     // End of variables declaration//GEN-END:variables

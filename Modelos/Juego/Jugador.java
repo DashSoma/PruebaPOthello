@@ -2,10 +2,7 @@ package Modelos.Juego;
 
 /**
  *
- * Clase que representa un jugador en el juego. Un jugador tiene un nombre y un
- * color de ficha.
- *
- * @author Christian Paniagua Castro Y Reyman Barquero Ramírez
+ * @author User
  */
 public class Jugador {
 
