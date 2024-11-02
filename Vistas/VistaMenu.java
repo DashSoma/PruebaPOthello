@@ -120,33 +120,78 @@ public class VistaMenu extends javax.swing.JFrame {
 
         };
         btnInciar = new javax.swing.JButton();
+        btnInciar1 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnInciar.setText("Iniciar");
+        btnInciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV32.png"))); // NOI18N
+        btnInciar.setText("1vrs1");
+        btnInciar.setContentAreaFilled(false);
+        btnInciar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnInciar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV32.png"))); // NOI18N
+        btnInciar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV64.png"))); // NOI18N
+        btnInciar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnInciar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnInciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInciarActionPerformed(evt);
             }
         });
 
+        btnInciar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV32.png"))); // NOI18N
+        btnInciar1.setText("1vrsBoot");
+        btnInciar1.setContentAreaFilled(false);
+        btnInciar1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnInciar1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV32.png"))); // NOI18N
+        btnInciar1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV64.png"))); // NOI18N
+        btnInciar1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnInciar1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnInciar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInciar1ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/infoVerde32.png"))); // NOI18N
+        jButton1.setText("Información");
+        jButton1.setContentAreaFilled(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/infoVerde32.png"))); // NOI18N
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/infoVerde64.png"))); // NOI18N
+        jButton1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
         jDesktopPane1.setLayer(btnInciar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(btnInciar1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap(298, Short.MAX_VALUE)
-                .addComponent(btnInciar)
-                .addGap(281, 281, 281))
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap(204, Short.MAX_VALUE)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(btnInciar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(btnInciar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(200, 200, 200))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addContainerGap())))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap(295, Short.MAX_VALUE)
-                .addComponent(btnInciar)
-                .addGap(52, 52, 52))
+                .addContainerGap()
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnInciar, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                    .addComponent(btnInciar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(36, 36, 36))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -167,6 +212,10 @@ public class VistaMenu extends javax.swing.JFrame {
         VistaJuego view = new VistaJuego(this,true);
         view.setVisible(true);
     }//GEN-LAST:event_btnInciarActionPerformed
+
+    private void btnInciar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInciar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInciar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,6 +254,8 @@ public class VistaMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInciar;
+    private javax.swing.JButton btnInciar1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JDesktopPane jDesktopPane1;
     // End of variables declaration//GEN-END:variables
 }
