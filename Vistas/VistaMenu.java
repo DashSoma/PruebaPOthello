@@ -86,7 +86,12 @@ public class VistaMenu extends javax.swing.JFrame {
                     clip.close();
                     clip = null;
                 } else {
-                    AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource("/Vistas/AudioInicio.wav"));
+                    java.net.URL resource = getClass().getResource("/musica/Inicio.wav");
+                    if (resource == null) {
+                        System.err.println("No se encontró el archivo de audio en la ruta especificada.");
+                        return;
+                    }
+                    AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(resource);
                     clip = AudioSystem.getClip();
                     clip.open(audioInputStream);
                     clip.start();
@@ -95,18 +100,11 @@ public class VistaMenu extends javax.swing.JFrame {
                 e.printStackTrace();
             }
         } else {
-            clip.stop();
+            if (clip != null && clip.isRunning()) {
+                clip.stop();
+            }
         }
-
     }
-    
-    
-    
-    
-    
-    
-    
-    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -124,6 +122,11 @@ public class VistaMenu extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         btnInciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/PlayV32.png"))); // NOI18N
         btnInciar.setText("1vrs1");
@@ -210,12 +213,17 @@ public class VistaMenu extends javax.swing.JFrame {
 
     private void btnInciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInciarActionPerformed
         VistaJuego view = new VistaJuego(this,true);
+        MusicaInicio(false);
         view.setVisible(true);
     }//GEN-LAST:event_btnInciarActionPerformed
 
     private void btnInciar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInciar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnInciar1ActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        MusicaInicio(true);
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
